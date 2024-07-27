@@ -17,7 +17,7 @@ struct HomeView: View {
         Activity(id: 0, title: "Today Steps", subtitle: "Goal 12,000", image: "figure.walk", tintColor: .green, amount: "9,810"),
         Activity(id: 1, title: "Today", subtitle: "Goal 1,000", image: "figure.walk", tintColor: .red, amount: "812"),
         Activity(id: 2, title: "Today Steps", subtitle: "Goal 12,000", image: "figure.walk", tintColor: .blue, amount: "9,812"),
-        Activity(id: 3, title: "Today Steps", subtitle: "Goal 50,000", image: "figure.run", tintColor: .purple, amount: "55,812")
+//        Activity(id: 3, title: "Today Steps", subtitle: "Goal 50,000", image: "figure.run", tintColor: .purple, amount: "55,812")
     
     
     
