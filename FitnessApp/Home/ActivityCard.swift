@@ -39,7 +39,7 @@ struct ActivityCard: View {
                             
                         
                         Text(activity.subtitle)
-//                            .font(.caption)
+                            .font(.caption)
                     }
                     Spacer()
                     
@@ -49,7 +49,7 @@ struct ActivityCard: View {
                 }
                 Text(activity.amount)
                     .font(.title)
-//                    .bold()
+                    .bold()
                     .padding()
                 
             }
