@@ -11,6 +11,7 @@
 		DF4AE2382C567B6900479B49 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4AE2372C567B6900479B49 /* HomeViewModel.swift */; };
 		DF4AE23D2C567F2300479B49 /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4AE23C2C567F2300479B49 /* Activity.swift */; };
 		DF4AE23F2C567F6800479B49 /* Workout.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4AE23E2C567F6800479B49 /* Workout.swift */; };
+		DF4AE2422C57697C00479B49 /* HealthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4AE2412C57697C00479B49 /* HealthManager.swift */; };
 		DFF4B5812C53F9BA00708BB8 /* FitnessAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF4B5802C53F9BA00708BB8 /* FitnessAppApp.swift */; };
 		DFF4B5832C53F9BA00708BB8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF4B5822C53F9BA00708BB8 /* ContentView.swift */; };
 		DFF4B5852C53F9BC00708BB8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DFF4B5842C53F9BC00708BB8 /* Assets.xcassets */; };
@@ -27,6 +28,8 @@
 		DF4AE2372C567B6900479B49 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		DF4AE23C2C567F2300479B49 /* Activity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
 		DF4AE23E2C567F6800479B49 /* Workout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Workout.swift; sourceTree = "<group>"; };
+		DF4AE2402C57694900479B49 /* FitnessApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FitnessApp.entitlements; sourceTree = "<group>"; };
+		DF4AE2412C57697C00479B49 /* HealthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthManager.swift; sourceTree = "<group>"; };
 		DFF4B57D2C53F9BA00708BB8 /* FitnessApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FitnessApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFF4B5802C53F9BA00708BB8 /* FitnessAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitnessAppApp.swift; sourceTree = "<group>"; };
 		DFF4B5822C53F9BA00708BB8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -78,6 +81,14 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
+		DF4AE2432C576F7400479B49 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				DF4AE2412C57697C00479B49 /* HealthManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
 		DFF4B5742C53F9BA00708BB8 = {
 			isa = PBXGroup;
 			children = (
@@ -97,6 +108,8 @@
 		DFF4B57F2C53F9BA00708BB8 /* FitnessApp */ = {
 			isa = PBXGroup;
 			children = (
+				DF4AE2432C576F7400479B49 /* Managers */,
+				DF4AE2402C57694900479B49 /* FitnessApp.entitlements */,
 				DFF4B5962C541E5D00708BB8 /* Home */,
 				DFF4B5802C53F9BA00708BB8 /* FitnessAppApp.swift */,
 				DFF4B5822C53F9BA00708BB8 /* ContentView.swift */,
@@ -203,6 +216,7 @@
 				DFF4B5952C54143F00708BB8 /* ProgressCircleView.swift in Sources */,
 				DFF4B5912C54049A00708BB8 /* HomeView.swift in Sources */,
 				DF4AE23F2C567F6800479B49 /* Workout.swift in Sources */,
+				DF4AE2422C57697C00479B49 /* HealthManager.swift in Sources */,
 				DFF4B5932C54058300708BB8 /* HistoricDataView.swift in Sources */,
 				DFF4B5832C53F9BA00708BB8 /* ContentView.swift in Sources */,
 				DFF4B5982C541EA000708BB8 /* ActivityCard.swift in Sources */,
@@ -332,12 +346,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = FitnessApp/FitnessApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"FitnessApp/Preview Content\"";
 				DEVELOPMENT_TEAM = 6BAF7M45BT;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "Please allow access to enjoy our features of the app";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -361,12 +377,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = FitnessApp/FitnessApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"FitnessApp/Preview Content\"";
 				DEVELOPMENT_TEAM = 6BAF7M45BT;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "Please allow access to enjoy our features of the app";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
