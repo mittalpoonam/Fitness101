@@ -17,7 +17,12 @@ class HomeViewModel: ObservableObject {
     @Published var stand: Int = 0
     
     @Published var activities = [Activity]()
-    
+    @Published var workouts = [
+        Workout(id: 0, title: "Running", image: "figure.run", tint: .cyan, duration: "51 mins", date: "Aug 1" , calories: "512 kcal"),
+        Workout(id: 1, title: "Strength Training", image: "figure.run", tint: .red, duration: "51 mins", date: "Aug 3"  , calories: "341 kcal"),
+        Workout(id: 2, title: "Running", image: "figure.run", tint: .purple, duration: "51 mins", date: "Aug 11"  , calories: "341 kcal"),
+        Workout(id: 3, title: "Running", image: "figure.run", tint: .cyan, duration: "51 mins", date: "Aug 13"  , calories: "341 kcal")
+    ]
     var mockActivities = [
         Activity(title: "Today Steps", subtitle: "Goal 12,000", image: "figure.walk", tintColor: .green, amount: "9,810"),
         Activity(title: "Today", subtitle: "Goal 1,000", image: "figure.walk", tintColor: .red, amount: "812"),
@@ -42,6 +47,7 @@ class HomeViewModel: ObservableObject {
                 fetchTodayStandHours()
                fetchTodaySteps()
                 fetchCurrentWeekActivities()
+                fetchRecentWorkouts()
             }catch {
                 print(error.localizedDescription)
             }
@@ -113,6 +119,21 @@ class HomeViewModel: ObservableObject {
                 DispatchQueue.main.async {
                     self.activities.append(contentsOf: activities)
                 }
+            case .failure(let failure):
+                print(failure.localizedDescription)
+            }
+        }
+    }
+    
+    //MARK: Recent Workouts
+    func fetchRecentWorkouts() {
+        healthManager.fetchWorkoutsForMonth(month: Date()) { result in
+            switch result {
+            case .success(let workouts):
+                DispatchQueue.main.async {
+                    self.workouts = Array(workouts.prefix(4))
+                }
+                
             case .failure(let failure):
                 print(failure.localizedDescription)
             }
